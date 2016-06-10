@@ -2,11 +2,11 @@ module Api
   module V2
 
     class UsersController < ApplicationController
-      before_action :authenticated?, only:[:show,:update]
+      before_action :authenticated?, only:[:show,:update,:freinds]
       respond_to :json
       
       def show
-        
+        render json: @user
       end
   
       def create 
@@ -28,6 +28,10 @@ module Api
       end
       
       def update
+      end
+      
+      def freinds
+        render json:  @user.freinds
       end
       
       private 

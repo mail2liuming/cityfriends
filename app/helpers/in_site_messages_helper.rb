@@ -1,0 +1,2 @@
+module InSiteMessagesHelper
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602032021) do
+ActiveRecord::Schema.define(version: 20160609043947) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"
@@ -29,6 +29,31 @@ ActiveRecord::Schema.define(version: 20160602032021) do
   end
 
   add_index "feeds", ["user_id"], name: "index_feeds_on_user_id"
+
+  create_table "in_site_messages", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.string   "msg_content"
+    t.integer  "status"
+    t.integer  "msg_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "in_site_messages", ["receiver_id"], name: "index_in_site_messages_on_receiver_id"
+  add_index "in_site_messages", ["sender_id"], name: "index_in_site_messages_on_sender_id"
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "positive_user_id"
+    t.integer  "status"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "relationships", ["positive_user_id"], name: "index_relationships_on_positive_user_id"
+  add_index "relationships", ["user_id", "positive_user_id"], name: "index_relationships_on_user_id_and_positive_user_id", unique: true
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

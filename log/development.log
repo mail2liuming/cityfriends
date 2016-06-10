@@ -1544,3 +1544,205 @@ authenticated?
   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "feeds" ("feed_type", "available", "start_place", "start_time", "end_place", "end_time", "user_id", "created_at", "updated_at", "status", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["feed_type", 1], ["available", "5"], ["start_place", "shanghai"], ["start_time", "2016-06-16 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-06-08 00:58:54.214906"], ["updated_at", "2016-06-08 00:58:54.214906"], ["status", 1], ["up", 0]]
   [1m[35m (15.9ms)[0m  commit transaction
 Completed 200 OK in 192ms (Views: 0.9ms | ActiveRecord: 20.6ms)
+
+
+Started POST "/v2/feeds" for 103.23.18.55 at 2016-06-08 23:53:10 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::FeedsController#create as */*
+  Parameters: {"feed"=>{"feed_type"=>"1", "start_place"=>"shanghai", "end_place"=>"auckland", "start_time"=>"2016-6-16", "end_time"=>"2016-6-29", "available"=>"5"}, "user_id"=>1, "token"=>"6-1gho3uIB10xG33Z9S8MA"}
+Can't verify CSRF token authenticity
+1
+6-1gho3uIB10xG33Z9S8MA
+authenticated?
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<User id: 1, name: "mingliu", email: "mail2liuming@gmail.com", password_digest: "$2a$10$PabpOpUJSQhgEgj9uAQtYeTi2FBq7xvYLqwUytBNEPO...", created_at: "2016-06-08 00:52:48", updated_at: "2016-06-08 00:52:48", token_digest: "$2a$10$mbbWgdTIIuPCu/glE81xVeWIaIge4z/Vcm1TXNvwBFs...">
+1
+6-1gho3uIB10xG33Z9S8MA
+authenticated?
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+#<User id: 1, name: "mingliu", email: "mail2liuming@gmail.com", password_digest: "$2a$10$PabpOpUJSQhgEgj9uAQtYeTi2FBq7xvYLqwUytBNEPO...", created_at: "2016-06-08 00:52:48", updated_at: "2016-06-08 00:52:48", token_digest: "$2a$10$mbbWgdTIIuPCu/glE81xVeWIaIge4z/Vcm1TXNvwBFs...">
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "feeds" ("feed_type", "available", "start_place", "start_time", "end_place", "end_time", "user_id", "created_at", "updated_at", "status", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["feed_type", 1], ["available", "5"], ["start_place", "shanghai"], ["start_time", "2016-06-16 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-06-08 23:53:11.935163"], ["updated_at", "2016-06-08 23:53:11.935163"], ["status", 1], ["up", 0]]
+  [1m[35m (17.0ms)[0m  commit transaction
+Completed 200 OK in 282ms (Views: 0.7ms | ActiveRecord: 19.5ms)
+
+
+Started POST "/v2/feeds" for 103.23.18.55 at 2016-06-08 23:54:01 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#create as */*
+  Parameters: {"feed"=>{"feed_type"=>"1", "start_place"=>"shanghai", "end_place"=>"auckland", "start_time"=>"2016-6-16", "end_time"=>"2016-6-29", "available"=>"5"}, "user_id"=>1, "token"=>"6-1gho3uIB10xG33Z9S8MA"}
+Can't verify CSRF token authenticity
+1
+6-1gho3uIB10xG33Z9S8MA
+authenticated?
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+#<User id: 1, name: "mingliu", email: "mail2liuming@gmail.com", password_digest: "$2a$10$PabpOpUJSQhgEgj9uAQtYeTi2FBq7xvYLqwUytBNEPO...", created_at: "2016-06-08 00:52:48", updated_at: "2016-06-08 00:52:48", token_digest: "$2a$10$mbbWgdTIIuPCu/glE81xVeWIaIge4z/Vcm1TXNvwBFs...">
+1
+6-1gho3uIB10xG33Z9S8MA
+authenticated?
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<User id: 1, name: "mingliu", email: "mail2liuming@gmail.com", password_digest: "$2a$10$PabpOpUJSQhgEgj9uAQtYeTi2FBq7xvYLqwUytBNEPO...", created_at: "2016-06-08 00:52:48", updated_at: "2016-06-08 00:52:48", token_digest: "$2a$10$mbbWgdTIIuPCu/glE81xVeWIaIge4z/Vcm1TXNvwBFs...">
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feeds" ("feed_type", "available", "start_place", "start_time", "end_place", "end_time", "user_id", "created_at", "updated_at", "status", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["feed_type", 1], ["available", "5"], ["start_place", "shanghai"], ["start_time", "2016-06-16 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-06-08 23:54:01.790130"], ["updated_at", "2016-06-08 23:54:01.790130"], ["status", 1], ["up", 0]]
+  [1m[36m (14.1ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 280ms (Views: 0.6ms | ActiveRecord: 16.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRelationships (20160609013314)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRelationships (20160609013314)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateRelationships (20160609013314)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (2.6ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (26.7ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160609013314"]]
+  [1m[35m (16.1ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInSiteMessages (20160609043947)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160609043947"]]
+  [1m[36m (27.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m

@@ -14,14 +14,14 @@ module Api
             end
             
             def create
-                @cur_user = current_user
-                if @cur_user
-                    @new_feed = @cur_user.feeds.build(feed_params)
-                    if @new_feed.save
+                cur_user = current_user
+                if cur_user
+                    new_feed = cur_user.feeds.build(feed_params)
+                    if new_feed.save
                         #render json: {:success => true}
-                        render json: @new_feed
+                        render json: new_feed
                     else
-                        render json: {:error =>@new_feed.errors}
+                        render json: {:error =>new_feed.errors}
                     end
                 else
                     render json: {:error => 'No this user'}
@@ -73,7 +73,7 @@ module Api
                 end 
                 query = nil
                 if authenticated?
-                    query = Feed.include(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_name)
+                    query = Feed.include(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,'user.name')
                 else
                     query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
                 end
