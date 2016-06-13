@@ -1,22 +1,21 @@
 module Api
     module V2
         class FeedsController < ApplicationController
-            before_action :authenticated?, only:[:show,:update,:create,:destroy]
+            before_action :check_auth?, only:[:show,:update,:create,:destroy]
             respond_to :json
 
             def show
-                feed = Feed.find_by(params[:id])
+                feed = Feed.find_by(id: params[:id])
                 if feed 
-                    render json: feed
+                    render json: feed.to_json(:only => [:id, :feed_type,:flight_no,:start_place,:start_time,:end_place,:end_time,:available,:user_id ])
                 else
                     render json: {:error => 'Not found'}
                 end
             end
             
             def create
-                cur_user = current_user
-                if cur_user
-                    new_feed = cur_user.feeds.build(feed_params)
+                if @user
+                    new_feed = @user.feeds.build(feed_params)
                     if new_feed.save
                         #render json: {:success => true}
                         render json: new_feed
@@ -29,28 +28,25 @@ module Api
             end
             
             def destroy
-                cur_user = current_user
-                if cur_user
-                    feed = Feed.find_by(params[:id])
-                    if feed
-                        if(feed.user.same?(cur_user))
-                            feed.destroy
-                            render json: {:success => true}
-                        else
-                           render json: {:error =>'Do not delete feeds of others'}
-                        end
+                
+                feed = Feed.find_by(id: params[:id])
+                logger.info feed.inspect
+                if feed
+                    if(feed.user.same?(@user))
+                        feed.destroy
+                        render json: {:success => true}
                     else
-                        render json: {:error =>@feed.errors}
+                          render json: {:error =>'Do not delete feeds of others'}
                     end
                 else
-                    render json: {:error => 'No this user'}
+                    render json: {:error =>@feed.errors}
                 end
             end
             
+            
             def update
-                cur_user = current_user
-                if cur_user
-                    feed = Feed.find_by(params[:id])
+                if @user
+                    feed = Feed.find_by(id: params[:id])
                     if feed
                         feed.update_attribute(feed_params)
                         render json: {:success => true}
@@ -73,11 +69,12 @@ module Api
                 end 
                 query = nil
                 if authenticated?
-                    query = Feed.include(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,'user.name')
+                    query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name')
                 else
                     query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
                 end
-                query.paginate(page: cur_page,per_age: per_age)
+                
+                render json: query.paginate(page: cur_page,per_page: per_page)
             end
             
             private 

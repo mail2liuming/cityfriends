@@ -36,27 +36,27 @@ class User < ActiveRecord::Base
     before_create :create_token
     before_save   {email.downcase!}
     
-    def self.digest(string)
+    def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
   
-    def self.new_token
+    def User.new_token
         SecureRandom.urlsafe_base64
     end
     
-    def remember
+    def login
         self.token = User.new_token
         update_attribute(:token_digest,User.digest(token))
     end
     
     def authenticated?(token)
-        return false if token_digest
-        BCrypt::Password.new(token).is_password?(token_digest)
+        return false if token_digest == nil
+        BCrypt::Password.new(token_digest).is_password?(token)
     end
     
-    def forget
+    def logout
         update_attribute(:token_digest,nil)
     end
     

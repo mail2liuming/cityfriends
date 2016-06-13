@@ -1,7 +1,7 @@
 module Api
   module V2
     class RelationshipsController < ApplicationController
-        before_action :authenticated?, only:[:create,:destroy]
+        before_action :check_auth?, only:[:create,:destroy]
         respond_to :json
         
         def create

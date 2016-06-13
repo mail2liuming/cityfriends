@@ -9,7 +9,7 @@ class Feed < ActiveRecord::Base
     
     
     belongs_to :user
-    default_scope ->{order(create_at: :desc)}
+    default_scope ->{order(created_at: :desc)}
     
     validates :user, presence: true
     validates :feed_type, presence: true

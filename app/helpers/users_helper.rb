@@ -1,14 +1,15 @@
 module UsersHelper
-    def authenticated?
-        logger.info params[:user_id]
-        logger.info params[:token]
-        
-        logger.info 'authenticated?'
-        
+    def check_auth?
         @user = User.find_by(id: params[:user_id])
-        @user && @user.authenticate(params[:token])
         
-        logger.info @user.inspect
+        if !(@user && @user.authenticated?(params[:token]))
+            render json: {:error => 'Please Login'}
+        end 
+    end
+    
+    def authenticated?
+        @user = User.find_by(id: params[:user_id])
+        @user && @user.authenticated?(params[:token])
     end
     
     def current_user

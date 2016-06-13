@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   #constraints subdomain: 'api' do
     namespace :api, path: nil do
       namespace :v2 do
-        get 'signup' => 'user#create'
-        get 'login' => 'user#login'
+        post 'signup' => 'users#create'
+        post 'login' => 'users#login'
         
         resources :users, only: [:create,:show] do
           member do

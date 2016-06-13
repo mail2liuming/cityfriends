@@ -1,12 +1,12 @@
 module Api
   module V2
     class InSiteMessagesController < ApplicationController
-        before_action :authenticated?, only:[:create,:update,:destroy]
+        before_action :check_auth?, only:[:create,:update,:destroy]
         respond_to :json
         
         def create
-            @new_msg = @user.sending_messages.build(receiver_id: params[:freind_id],msg_type:params[:msg_type])
-            if @new_msg
+            @new_msg = @user.sending_messages.build(msg_params)
+            if @new_msg.save
                 render json: {:success =>true}
             else
               render json: {:error =>@new_msg.errors}
@@ -32,6 +32,12 @@ module Api
                 render json: {:error =>@msg.errors}
             end
         end
+        
+        private 
+        
+            def msg_params
+                params.require(:msg).permit(:freind_id, :msg_type, :msg_content)
+            end
     end
   end
 end

@@ -2,11 +2,11 @@ module Api
   module V2
 
     class UsersController < ApplicationController
-      before_action :authenticated?, only:[:show,:update,:freinds]
+      before_action :check_auth?, only:[:show,:update,:freinds]
       respond_to :json
       
       def show
-        render json: @user
+        render json: @user.to_json(:only => [ :id, :name,:email ])
       end
   
       def create 
@@ -19,8 +19,9 @@ module Api
       end
       
       def login
-        @user = User.find_by(params[:email].downcase)
+        @user = User.find_by(email: params[:email].downcase)
         if @user && @user.authenticate(params[:password])
+          @user.login
           render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
         else
           render json: {:error =>@user.errors}
