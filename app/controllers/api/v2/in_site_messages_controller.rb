@@ -25,18 +25,17 @@ module Api
         
         def destroy
             @msg = InSiteMessage.find_by(id: params[:msg_id])
-            if @msg
-                @msg.destroy
+            if @msg && @msg.destroy
                 render json: {:success =>true}
             else
-                render json: {:error =>@msg.errors}
+                render json: {:error =>"error"}
             end
         end
         
         private 
         
             def msg_params
-                params.require(:msg).permit(:freind_id, :msg_type, :msg_content)
+                params.require(:msg).permit(:receiver_id, :msg_type, :msg_content)
             end
     end
   end

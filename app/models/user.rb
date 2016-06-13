@@ -5,13 +5,13 @@ class User < ActiveRecord::Base
                                  foreign_key: "user_id",
                                  dependent: :destroy
                                  
-    has_many :active_freinds, through: :active_relationship, source: :user
+    has_many :active_freinds, through: :active_relationship, source: :positive_user
     
     has_many :positive_relationship, class_name: "Relationship",
                                      foreign_key: "positive_user_id",
                                      dependent: :destroy
                                      
-    has_many :positive_freinds, through: :positive_relationship, source: :positive_user
+    has_many :positive_freinds, through: :positive_relationship, source: :user
     
     has_many :sending_messages, class_name: "InSiteMessage",
                                 foreign_key: "sender_id",
@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
     end
     
     def freind?(other_user)
-        active_freinds.exist?(other_user) || positive_freinds.exist?(other_user)
+        active_freinds.exists?(other_user.id) || positive_freinds.exists?(other_user.id)
     end
     
     def add_freind(other_user)
@@ -80,9 +80,16 @@ class User < ActiveRecord::Base
     
     def delete_freind(other_user)
         if freind?(other_user)
-            active_relationship.find_by(other_user.id).destroy
-            positive_relationship.find_by(other_user.id).destroy
+            rel = active_relationship.find_by(positive_user_id: other_user.id)
+            if rel
+                return rel.destroy
+            end
+            rel = positive_relationship.find_by(user_id: other_user.id)
+            if rel
+                return rel.destroy
+            end
         end 
+        return false;
     end
     
     private

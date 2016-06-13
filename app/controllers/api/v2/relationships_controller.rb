@@ -10,17 +10,16 @@ module Api
               @user.add_freind(@freind)
               render json: {:success =>true}
             else
-              render json: {:error =>@freind.errors}
+              render json: {:error =>"No this user"}
             end
         end
         
         def destroy
             @freind = User.find_by(id: params[:freind_id])
-            if @freind
-              @user.delete_freind(@freind)
+            if @freind && @user.delete_freind(@freind)
               render json: {:success =>true}
             else
-              render json: {:error =>@freind.errors}
+              render json: {:error =>"No this user"}
             end
         end
     end 
