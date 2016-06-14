@@ -2,7 +2,7 @@ module Api
   module V2
 
     class UsersController < ApplicationController
-      before_action :check_auth?, only:[:show,:update,:freinds]
+      before_action :check_auth?, only:[:show,:update,:freinds,:add_freind,:delete_freind]
       respond_to :json
       
       def show
@@ -33,6 +33,25 @@ module Api
       
       def freinds
         render json:  @user.freinds
+      end
+      
+      def add_freind
+        @freind = User.find_by(id: params[:freind_id])
+        if @freind
+          @user.add_freind(@freind)
+          render json: {:success =>true}
+        else
+          render json: {:error =>"No this user"}
+        end
+      end
+      
+      def delete_freind
+        @freind = User.find_by(id: params[:freind_id])
+        if @freind && @user.delete_freind(@freind)
+          render json: {:success =>true}
+        else
+          render json: {:error =>"No this user"}
+        end
       end
       
       private 

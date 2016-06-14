@@ -6,11 +6,16 @@ Rails.application.routes.draw do
         post 'signup' => 'users#create'
         post 'login' => 'users#login'
         
-        resources :users, only: [:create,:show] do
-          member do
-            post :update
-          end
+        #post 'users/add_freind'
+        #delete 'users/delete_freind'
+        
+        resources :users, only: [:show] do
+          
           collection do
+            post :add_freind
+            
+            delete :delete_freind
+            
             get :freinds
           end
         end
