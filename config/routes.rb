@@ -6,16 +6,14 @@ Rails.application.routes.draw do
         post 'signup' => 'users#create'
         post 'login' => 'users#login'
         
-        #post 'users/add_freind'
-        #delete 'users/delete_freind'
+        post 'users/add_freind'
+        delete 'users/delete_freind'
         
         resources :users, only: [:show] do
-          
+          member do
+            post :update
+          end
           collection do
-            post :add_freind
-            
-            delete :delete_freind
-            
             get :freinds
           end
         end
@@ -31,7 +29,7 @@ Rails.application.routes.draw do
         
         resources :relationships, only: [:create, :destroy]
         resources :in_site_messages, only: [:create,:update,:destroy]
-        
+        resources :calendars, only: [:create, :destroy]
       end
     end
   #end

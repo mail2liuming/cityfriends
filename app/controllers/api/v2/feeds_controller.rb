@@ -17,8 +17,8 @@ module Api
                 if @user
                     new_feed = @user.feeds.build(feed_params)
                     if new_feed.save
-                        #render json: {:success => true}
-                        render json: new_feed
+                        @user.calendars.create!(feed_id: new_feed.id,calendar_type: Calendar::TYPE_OWNER)
+                        render json: {:success => true}
                     else
                         render json: {:error =>new_feed.errors}
                     end

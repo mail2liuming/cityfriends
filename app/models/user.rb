@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
     has_many :receiving_messages, class_name: "InSiteMessage",
                                   foreign_key: "receiver_id",
                                   dependent: :destroy
+    has_many :calendars, dependent: :destroy
                                   
     
     has_secure_password

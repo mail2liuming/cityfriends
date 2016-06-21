@@ -6584,3 +6584,106 @@ Can't verify CSRF token authenticity
   [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
   [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
 Completed 200 OK in 96ms (Views: 0.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-06-17 02:02:11 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::UsersController#login as */*
+  Parameters: {"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example@railstutorial.org"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$WyhLJJdXpGKJSM7AjvjXF.07ULV4hZ/Xz06wPMgGd9w33/ah1/9Uy"], ["updated_at", "2016-06-17 02:02:12.155828"], ["id", 1]]
+  [1m[36m (18.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 228ms (Views: 0.3ms | ActiveRecord: 23.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCalendars (20160620044811)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620044811"]]
+  [1m[36m (14.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_feeds_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_sender_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
