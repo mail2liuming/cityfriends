@@ -69,12 +69,13 @@ module Api
                 end 
                 query = nil
                 if authenticated?
-                    query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name')
+                    query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name as user_name')
                 else
                     query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
                 end
                 
-                render json: query.paginate(page: cur_page,per_page: per_page)
+                #render json: query.paginate(page: cur_page,per_page: per_page)
+                @feeds = query.paginate(page: cur_page,per_page: per_page)
             end
             
             private 

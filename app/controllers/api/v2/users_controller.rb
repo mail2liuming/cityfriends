@@ -6,25 +6,38 @@ module Api
       respond_to :json
       
       def show
-        render json: @user.to_json(:only => [ :id, :name,:email ])
+        
       end
+  
+      swagger_controller :users, 'users'
+
+      swagger_api :create do
+          summary 'Returns all posts'
+      end
+  
   
       def create 
         @user = User.new(user_params)
         if @user.save
-          render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
+          #render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
+          @user
         else
-          render json: {:error =>@user.errors}
+          #render json: {:error =>@user.errors}
+          @error = {status: 400, message: @user.errors.to_s}
+          render partial: 'api/v2/shared/api_error'
         end
       end
       
       def login
-        @user = User.find_by(email: params[:email].downcase)
-        if @user && @user.authenticate(params[:password])
-          @user.login
-          render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
-        else
-          render json: {:error =>@user.errors}
+        if(params.has_key?(:email) && params.has_key?(:password))
+          @user = User.find_by(email: params[:email].downcase)
+          if @user && @user.authenticate(params[:password])
+            @user.login
+            render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
+          else
+            @error = {status: 400, message: 'Bad Request'}
+            render partial: 'api/v2/shared/api_error'
+          end
         end
       end
       

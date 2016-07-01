@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get '/api' => redirect('/apidocs/swagger/index.html?url=/apidocs/api-docs.json')
+  
   #constraints subdomain: 'api' do
     namespace :api, path: nil do
       namespace :v2 do
@@ -29,7 +31,8 @@ Rails.application.routes.draw do
         
         resources :relationships, only: [:create, :destroy]
         resources :in_site_messages, only: [:create,:update,:destroy]
-        resources :calendars, only: [:create, :destroy]
+        resources :calendars, only: [:create, :destroy, :index] 
+        end
       end
     end
   #end
@@ -90,4 +93,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

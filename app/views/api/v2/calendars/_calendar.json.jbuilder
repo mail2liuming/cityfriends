@@ -1,0 +1,1 @@
+json.(calendar,:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)

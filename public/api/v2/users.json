@@ -1,0 +1,19 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "https://mojo-backend-mingliu.c9users.io",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "/v2/signup.json",
+      "operations": [
+        {
+          "summary": "Returns all posts",
+          "nickname": "Api::V2::Users#create",
+          "method": "post"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

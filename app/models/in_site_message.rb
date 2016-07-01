@@ -5,5 +5,7 @@ class InSiteMessage < ActiveRecord::Base
     validates :sender_id, presence: true
     validates :receiver_id, presence: true
     validates :msg_type,presence: true
+    
+    default_scope ->{order(created_at: :desc)}
         
 end
