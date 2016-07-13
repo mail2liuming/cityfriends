@@ -7,11 +7,11 @@ module UsersHelper
         
         if !(@user && @user.authenticated?(get_token))
             if @user
-                @error = {status: 400, message: @user.errors.to_s}
+                @error = {status: 400, message: @user.errors.inspect}
             else
                 @error = {status: 501, message: 'no user'}
             end
-            render partial: 'api/v2/shared/api_error' ,status: @error.status
+            render partial: 'api/v2/shared/api_error', status: @error[:status]
         end 
     end
     
@@ -33,9 +33,7 @@ module UsersHelper
     private 
         def get_user_id
             user_id = -1
-            if(params.has_key?(:user_id))
-                user_id = params[:user_id]
-            elsif user_token = request.headers[:Authorization]
+            if user_token = request.headers[:Authorization]
                 if user_token =~USER_TOKEN
                     user_id = $1
                 end
@@ -45,9 +43,7 @@ module UsersHelper
         
         def get_token
             token = nil
-            if(params.has_key?(:token))
-                token = params[:token]
-            elsif user_token = request.headers[:Authorization]
+            if user_token = request.headers[:Authorization]
                 if user_token =~USER_TOKEN
                     token = $2
                 end

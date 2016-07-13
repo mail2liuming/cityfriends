@@ -35,8 +35,12 @@ module Api
             @user.login
             render json: @user.to_json(:only => [ :id, :name,:email ],:methods => :token)
           else
-            @error = {status: 400, message: 'Bad Request'}
-            render partial: 'api/v2/shared/api_error'
+            if @user
+                @error = {status: 400, message: 'Bad Request'}
+            else
+                @error = {status: 404, message: 'No User'}
+            end
+            render partial: 'api/v2/shared/api_error',status: @error[:status]
           end
         end
       end
