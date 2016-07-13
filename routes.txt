@@ -1,0 +1,23 @@
+                    Prefix Verb   URI Pattern                        Controller#Action
+                       api GET    /api(.:format)                     redirect(301, /apidocs/swagger/index.html?url=/apidocs/api-docs.json)
+             api_v2_signup POST   /v2/signup(.:format)               api/v2/users#create
+              api_v2_login POST   /v2/login(.:format)                api/v2/users#login
+   api_v2_users_add_freind POST   /v2/users/add_freind(.:format)     api/v2/users#add_freind
+api_v2_users_delete_freind DELETE /v2/users/delete_freind(.:format)  api/v2/users#delete_freind
+               api_v2_user POST   /v2/users/:id(.:format)            api/v2/users#update
+      freinds_api_v2_users GET    /v2/users/freinds(.:format)        api/v2/users#freinds
+                           GET    /v2/users/:id(.:format)            api/v2/users#show
+               api_v2_feed POST   /v2/feeds/:id(.:format)            api/v2/feeds#update
+      entries_api_v2_feeds GET    /v2/feeds/entries(.:format)        api/v2/feeds#entries
+              api_v2_feeds POST   /v2/feeds(.:format)                api/v2/feeds#create
+                           GET    /v2/feeds/:id(.:format)            api/v2/feeds#show
+                           DELETE /v2/feeds/:id(.:format)            api/v2/feeds#destroy
+      api_v2_relationships POST   /v2/relationships(.:format)        api/v2/relationships#create
+       api_v2_relationship DELETE /v2/relationships/:id(.:format)    api/v2/relationships#destroy
+   api_v2_in_site_messages POST   /v2/in_site_messages(.:format)     api/v2/in_site_messages#create
+    api_v2_in_site_message PATCH  /v2/in_site_messages/:id(.:format) api/v2/in_site_messages#update
+                           PUT    /v2/in_site_messages/:id(.:format) api/v2/in_site_messages#update
+                           DELETE /v2/in_site_messages/:id(.:format) api/v2/in_site_messages#destroy
+          api_v2_calendars GET    /v2/calendars(.:format)            api/v2/calendars#index
+                           POST   /v2/calendars(.:format)            api/v2/calendars#create
+           api_v2_calendar DELETE /v2/calendars/:id(.:format)        api/v2/calendars#destroy

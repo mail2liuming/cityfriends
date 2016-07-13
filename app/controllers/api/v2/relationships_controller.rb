@@ -1,8 +1,9 @@
 module Api
   module V2
     class RelationshipsController < ApplicationController
-        before_action :check_auth?, only:[:create,:destroy]
         respond_to :json
+        
+        before_action :check_auth?, only:[:create,:destroy]
         
         def create
             @freind = User.find_by(id: params[:freind_id])

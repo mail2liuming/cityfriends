@@ -1,8 +1,10 @@
 module Api
   module V2
     class InSiteMessagesController < ApplicationController
-        before_action :check_auth?, only:[:create,:update,:destroy]
         respond_to :json
+        
+        before_action :check_auth?, only:[:create,:update,:destroy]
+        
         
         def index
                 per_page = 25

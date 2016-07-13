@@ -2,8 +2,8 @@ module Api
   module V2
 
     class UsersController < ApplicationController
-      before_action :check_auth?, only:[:show,:update,:freinds,:add_freind,:delete_freind]
       respond_to :json
+      before_action :check_auth?, only:[:show,:update,:freinds,:add_freind,:delete_freind]
       
       def show
         

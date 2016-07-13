@@ -1,9 +1,10 @@
 module Api
     module V2
         class CalendarsController < ApplicationController
-            before_action :check_auth?, only:[:index,:create,:destroy]
             respond_to :json
             
+            before_action :check_auth?, only:[:index,:create,:destroy]
+
             def index
                 per_page = 25
                 cur_page = 1

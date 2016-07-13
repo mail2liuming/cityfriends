@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
     has_many :feeds , dependent: :destroy
     
+    has_many :user_only_fetch_name, -> {select(:id,:name)}, class_name: 'Feed', foreign_key: 'user_id'
+    
     has_many :active_relationship, class_name: "Relationship",
                                  foreign_key: "user_id",
                                  dependent: :destroy
@@ -34,8 +36,9 @@ class User < ActiveRecord::Base
     
     attr_accessor :token
     
-    before_create :create_token
     before_save   {email.downcase!}
+    before_create :create_token
+    
     
     def User.digest(string)
         cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

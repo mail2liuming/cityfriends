@@ -1,9 +1,9 @@
 module Api
     module V2
         class FeedsController < ApplicationController
-            before_action :check_auth?, only:[:show,:update,:create,:destroy]
             respond_to :json
-
+            
+            before_action :check_auth?, only:[:show,:update,:create,:destroy]
             def show
                 feed = Feed.find_by(id: params[:id])
                 if feed 
@@ -69,7 +69,9 @@ module Api
                 end 
                 query = nil
                 if authenticated?
-                    query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name as user_name')
+                    #include？
+                    #query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name as user_name')
+                    query = Feed.includes(:user).references(:user)
                 else
                     query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
                 end
