@@ -21,15 +21,15 @@ module Api
             end
             
             def create
-                if params.has_key?(:feed_id)
+                if params.has_key?(:feed_id) && params.has_key?(:exact_time)
                     @calendar = @user.calendars.build(feed_id: params[:feed_id],calendar_type: Calendar::TYPE_JOINER)
                     if @calendar.save
-                        render json: {:success =>true}
+                        render_success
                     else
-                        render json: {:error =>@calendar.errors}
+                        render_error(400,@calendar.error)
                     end
                 else
-                    render json: {:error =>"bad request"}
+                    render_error(400,"bad request")
                 end
             end
             
@@ -37,12 +37,12 @@ module Api
                 if params.has_key?(:calendar_id)
                     @calendar = Calendar.find_by(id: params[:calendar_id])
                     if @calendar && @calendar.destroy
-                        render json: {:success =>true}
+                        render_success
                     else
-                        render json: {:error =>"error"}
+                        render_error(400,"bad request")
                     end  
                 else
-                    render json: {:error =>"bad request"}
+                    render_error(400,"bad request")
                 end
             end
             

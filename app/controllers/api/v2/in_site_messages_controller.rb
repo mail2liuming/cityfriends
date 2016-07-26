@@ -22,9 +22,12 @@ module Api
         def create
             @new_msg = @user.sending_messages.build(msg_params)
             if @new_msg.save
-                render json: {:success =>true}
+                if @new_msg.msg_type == InSiteMessage::TYPE_ACCEPT_FRIEND
+                    @new_msg.receiver.add_freind(@new_msg.sender)
+                end
+                render_success
             else
-              render json: {:error =>@new_msg.errors}
+                render_error(400,@new_msg.errors)
             end
         end 
         
@@ -41,9 +44,9 @@ module Api
         def destroy
             @msg = InSiteMessage.find_by(id: params[:msg_id])
             if @msg && @msg.destroy
-                render json: {:success =>true}
+                render_success
             else
-                render json: {:error =>"error"}
+                render_error(400,'bad_request')
             end
         end
         

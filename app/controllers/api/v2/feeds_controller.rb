@@ -75,6 +75,7 @@ module Api
                     #query = Feed.joins(:user).select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available,:user_id,'users.name as user_name')
                     query = Feed.includes(:user).references(:user)
                 else
+                    #TODO: plunk?
                     query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
                 end
                 

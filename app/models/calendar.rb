@@ -7,6 +7,16 @@ class Calendar < ActiveRecord::Base
     
     validates :user ,presence: true
     validates :feed ,presence: true
+    validates :exact_time ,presence: true
+    validates :check_feed_type
     
-    default_scope ->{order(created_at: :desc)}
+    
+    default_scope ->{order(exact_time: :desc)}
+    
+    private 
+      def check_feed_type
+          if self.feed.feed_type != Feed::TYPE_PROVIDER
+              errors.add(:feed, "must be a provider feed as a calendar")
+          end
+      end
 end
