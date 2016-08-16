@@ -4,6 +4,7 @@ class CreateCalendars < ActiveRecord::Migration
       t.integer :user_id
       t.integer :feed_id
       t.integer :calendar_type
+      t.datetime :exact_time
 
       t.timestamps null: false
     end

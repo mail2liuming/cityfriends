@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725224129) do
+ActiveRecord::Schema.define(version: 20160814234226) do
 
   create_table "calendars", force: :cascade do |t|
     t.integer  "user_id"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160725224129) do
     t.integer  "calendar_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.datetime "exate_time"
+    t.datetime "exact_time"
   end
 
   add_index "calendars", ["feed_id"], name: "index_calendars_on_feed_id"
@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(version: 20160725224129) do
   create_table "feeds", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "feed_type"
-    t.string   "flight_no"
+    t.string   "feed_content"
     t.string   "start_place"
     t.datetime "start_time"
     t.string   "end_place"
     t.datetime "end_time"
-    t.string   "available"
+    t.string   "reserved_column"
     t.integer  "up"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "status"
   end
 

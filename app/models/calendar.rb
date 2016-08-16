@@ -8,7 +8,7 @@ class Calendar < ActiveRecord::Base
     validates :user ,presence: true
     validates :feed ,presence: true
     validates :exact_time ,presence: true
-    validates :check_feed_type
+    validate :check_feed_type
     
     
     default_scope ->{order(exact_time: :desc)}

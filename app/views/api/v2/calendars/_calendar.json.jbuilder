@@ -1,1 +1,4 @@
-json.(calendar,:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:available)
+json.(calendar,:id,:calendar_type,:exact_time)
+json.feed_content calendar.feed.feed_content
+json.user_name    calendar.feed.user.name
+json.user_id      calendar.feed.user_id

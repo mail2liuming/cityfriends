@@ -14,20 +14,16 @@ module Api
                 if params.has_key?(:page)
                     cur_page = params[:page]
                 end 
-                query = @user.calendars.includes(:feed)
+                query = @user.calendars.includes(feed: :user).references(:feed)
                 
                 #render json: query.paginate(page: cur_page,per_page: per_page)
                 @calendars = query.paginate(page: cur_page,per_page: per_page)
             end
             
             def create
-                if params.has_key?(:feed_id) && params.has_key?(:exact_time)
-                    @calendar = @user.calendars.build(feed_id: params[:feed_id],calendar_type: Calendar::TYPE_JOINER)
-                    if @calendar.save
-                        render_success
-                    else
-                        render_error(400,@calendar.error)
-                    end
+                @calendar = @user.calendars.build(calendar_params)
+                if @calendar.save
+                    render_success
                 else
                     render_error(400,"bad request")
                 end
@@ -45,6 +41,12 @@ module Api
                     render_error(400,"bad request")
                 end
             end
+            
+            private 
+            
+                def calendar_params
+                    params.require(:calendar).permit(:calendar_type, :feed_id, :exact_time)
+                end
             
         end
     end

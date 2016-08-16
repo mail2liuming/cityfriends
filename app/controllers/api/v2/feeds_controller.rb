@@ -17,7 +17,7 @@ module Api
                 if @user
                     new_feed = @user.feeds.build(feed_params)
                     if new_feed.save
-                        @user.calendars.create!(feed_id: new_feed.id,calendar_type: Calendar::TYPE_OWNER)
+                        #@user.calendars.create!(feed_id: new_feed.id,calendar_type: Calendar::TYPE_OWNER)
                         render partial: 'api/v2/shared/api_success'
                     else
                         @error = {status: 501, message: new_feed.errors}
