@@ -15,7 +15,7 @@ module Api
                 if params.has_key?(:page)
                     cur_page = params[:page]
                 end 
-                query = @user.messages
+                query = @user.messages.includes(:user).references(:user)
                 @messages = query.paginate(page: cur_page,per_page: per_page)
         end
         
@@ -34,7 +34,7 @@ module Api
         def update
             @msg = InSiteMessage.find_by(id: params[:msg_id])
             if @msg
-                @msg.update_attribute(msg_type: params[:msg_type])
+                @msg.update_attribute(status: params[:status])
                 render json: {:success =>true}
             else
                 render json: {:error =>@msg.errors}
@@ -48,6 +48,19 @@ module Api
             else
                 render_error(400,'bad_request')
             end
+        end
+        
+        def unreads
+            msgs = params[:msgs]
+            msgs.each do |msg| 
+                @msg = InSiteMessage.find_by(msg[:msg_id])
+                if @msg
+                    @msg.update_attribute(status: msg[:status])
+                else
+                    render_error(400,"bad request")
+                end
+            end
+            render_success
         end
         
         private 

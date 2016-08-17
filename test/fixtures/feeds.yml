@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: 
-  type: 
-  flight_no: MyString
+# one:
+#   user_id: 
+#   type: 
+#   flight_no: MyString
 
-two:
-  user_id: 
-  type: 
-  flight_no: MyString
+# two:
+#   user_id: 
+#   type: 
+#   flight_no: MyString

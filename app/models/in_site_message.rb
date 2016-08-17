@@ -5,6 +5,9 @@ class InSiteMessage < ActiveRecord::Base
     
     TYPE_COMMON_TEXT = 4
     
+    STATUS_UNREAD = 15
+    STATUS_READ = 16
+    
     
     belongs_to :sender ,class_name: "User"
     belongs_to :receiver, class_name: "User"
@@ -12,7 +15,7 @@ class InSiteMessage < ActiveRecord::Base
     validates :sender_id, presence: true
     validates :receiver_id, presence: true
     validates :msg_type,presence: true
-    validates :check_message_type
+    validate :check_message_type
     
     
     default_scope ->{order(created_at: :desc)}
