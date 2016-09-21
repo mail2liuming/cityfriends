@@ -38,4 +38,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  # This handles cross-origin resource sharing.
+# See: https://github.com/cyu/rack-cors
+config.middleware.insert_before 0, "Rack::Cors" do
+  allow do
+    # In development, we don't care about the origin.
+    origins '*'
+    # Reminder: On the following line, the 'methods' refer to the 'Access-
+    # Control-Request-Method', not the normal Request Method.
+    resource '*', :headers => :any, :methods => [:get, :post, :options, :delete, :put, :patch], credentials: true
+  end
+end
 end

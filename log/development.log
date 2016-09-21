@@ -39520,3 +39520,2124 @@ Processing by Api::V2::FeedsController#entries as JSON
   Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
   Rendered api/v2/feeds/entries.json.jbuilder (21.2ms)
 Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:39:44 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (38.0ms)
+Completed 200 OK in 137ms (Views: 70.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:41:32 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (17.2ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:45:39 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (22.4ms)
+Completed 200 OK in 215ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:46:36 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (74.5ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:47:51 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (2.1ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (17.3ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:48:41 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.8ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.8ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (46.8ms)
+Completed 200 OK in 59ms (Views: 55.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:52:39 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (32.1ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:56:03 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (93.5ms)
+Completed 200 OK in 99ms (Views: 97.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:56:26 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (2.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (173.6ms)
+Completed 200 OK in 179ms (Views: 177.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 03:59:27 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (65.1ms)
+Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:02:09 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (24.8ms)
+Completed 200 OK in 135ms (Views: 30.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:14:17 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (206.8ms)
+Completed 200 OK in 215ms (Views: 212.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:15:14 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (47.9ms)
+Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:16:11 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (197.7ms)
+Completed 200 OK in 204ms (Views: 202.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:16:50 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (120.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (141.2ms)
+Completed 200 OK in 149ms (Views: 146.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:18:10 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (32.5ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:19:12 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (18.6ms)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:20:19 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (155.6ms)
+Completed 200 OK in 164ms (Views: 161.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:20:47 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (27.7ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:32:09 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (23.7ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:32:42 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (28.9ms)
+Completed 200 OK in 36ms (Views: 33.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:50:25 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (68.9ms)
+Completed 200 OK in 74ms (Views: 72.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:50:33 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (36.1ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:52:05 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (121.4ms)
+Completed 200 OK in 127ms (Views: 125.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:52:40 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (7.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (38.3ms)
+Completed 200 OK in 49ms (Views: 46.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:55:10 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (151.7ms)
+Completed 200 OK in 158ms (Views: 156.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:55:43 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (132.6ms)
+Completed 200 OK in 138ms (Views: 136.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-16 04:58:50 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (20.8ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:16:54 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (65.8ms)
+Completed 200 OK in 184ms (Views: 95.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:32:04 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (185.3ms)
+Completed 200 OK in 194ms (Views: 190.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:32:05 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (190.9ms)
+Completed 200 OK in 197ms (Views: 195.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:33:11 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (108.4ms)
+Completed 200 OK in 117ms (Views: 113.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:34:15 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (168.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (189.4ms)
+Completed 200 OK in 197ms (Views: 193.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:39:01 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (70.3ms)
+Completed 200 OK in 78ms (Views: 75.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-18 23:42:50 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (151.7ms)
+Completed 200 OK in 159ms (Views: 156.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 00:11:56 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.7ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (2.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (80.2ms)
+Completed 200 OK in 239ms (Views: 86.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/v2/feeds/entries.json?page=2" for 103.23.18.55 at 2016-09-19 00:12:06 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"2"}
+  [1m[35mUser Load (2.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 25[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feeds"
+  Rendered api/v2/feeds/entries.json.jbuilder (8.7ms)
+Completed 200 OK in 24ms (Views: 15.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=3" for 103.23.18.55 at 2016-09-19 00:12:08 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.5ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 50
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feeds"[0m
+  Rendered api/v2/feeds/entries.json.jbuilder (2.9ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=4" for 103.23.18.55 at 2016-09-19 00:12:09 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 75[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feeds"
+  Rendered api/v2/feeds/entries.json.jbuilder (3.0ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=5" for 103.23.18.55 at 2016-09-19 00:12:16 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 100
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feeds"[0m
+  Rendered api/v2/feeds/entries.json.jbuilder (3.4ms)
+Completed 200 OK in 93ms (Views: 8.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v2/feeds/entries.json?page=6" for 103.23.18.55 at 2016-09-19 00:12:17 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 125[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feeds"
+  Rendered api/v2/feeds/entries.json.jbuilder (6.0ms)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 02:17:53 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (30.4ms)
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 02:57:23 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (32.8ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 02:59:18 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (163.4ms)
+Completed 200 OK in 173ms (Views: 169.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 02:59:38 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.8ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (37.1ms)
+Completed 200 OK in 178ms (Views: 175.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:01:03 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (39.5ms)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:01:54 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (51.7ms)
+Completed 200 OK in 60ms (Views: 57.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:04:24 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (84.3ms)
+Completed 200 OK in 92ms (Views: 89.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:05:15 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (6.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (237.5ms)
+Completed 200 OK in 255ms (Views: 251.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:15:04 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (2.1ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (117.8ms)
+Completed 200 OK in 125ms (Views: 122.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:15:23 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.6ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.7ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (28.9ms)
+Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:16:18 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.4ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (28.3ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-19 03:18:20 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", -1]]
+  [1m[35mFeed Load (0.7ms)[0m  SELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.1ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (1.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (63.8ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 21:40:20 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (58.1ms)
+Completed 200 OK in 200ms (Views: 94.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 21:47:19 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (90.1ms)
+Completed 200 OK in 97ms (Views: 94.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 22:29:37 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (134.1ms)
+Completed 200 OK in 139ms (Views: 137.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 22:29:48 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (80.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (99.8ms)
+Completed 200 OK in 105ms (Views: 103.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 22:43:57 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (43.1ms)
+Completed 200 OK in 49ms (Views: 46.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 22:58:20 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (121.2ms)
+Completed 200 OK in 129ms (Views: 126.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 22:58:32 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (70.9ms)
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:08:43 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (79.1ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:19:47 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (19.8ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:20:09 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (89.6ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:20:10 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (20.1ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:23:10 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (138.7ms)
+Completed 200 OK in 144ms (Views: 142.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-20 23:26:23 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (116.4ms)
+Completed 200 OK in 122ms (Views: 120.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 00:03:30 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (39.0ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 02:28:53 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (24.2ms)
+Completed 200 OK in 139ms (Views: 29.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 02:29:01 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (68.9ms)
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 02:31:43 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (58.4ms)
+Completed 200 OK in 71ms (Views: 68.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 02:31:51 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (4.9ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (210.4ms)
+Completed 200 OK in 215ms (Views: 213.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 03:08:43 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (32.5ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 03:12:18 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.6ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (27.2ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.8ms)
+
+
+Started OPTIONS "/v2/login" for 103.23.18.55 at 2016-09-21 03:37:49 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [OPTIONS] "/v2/login"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (62.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (355.6ms)
+
+
+Started GET "/" for 103.23.18.55 at 2016-09-21 03:39:04 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/railties-4.2.2/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-09-21 03:39:17 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#login as */*
+  Parameters: {"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example@railstutorial.org"}}
+  [1m[35mUser Load (11.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$3MrXw1s5B9eNG2onvFA8SemCySb0u0AJfubqi7ORsADKZV0DZJsZi"], ["updated_at", "2016-09-21 03:39:17.368466"], ["id", 1]]
+  [1m[36m (22.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 210ms (Views: 0.2ms | ActiveRecord: 34.3ms)
+
+
+Started OPTIONS "/v2/login" for 103.23.18.55 at 2016-09-21 03:45:08 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [OPTIONS] "/v2/login"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (101.7ms)
+
+
+Started OPTIONS "/v2/login" for 103.23.18.55 at 2016-09-21 03:45:17 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [OPTIONS] "/v2/login"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.8ms)
+
+
+Started OPTIONS "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 03:49:26 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [OPTIONS] "/v2/feeds/entries.json"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (106.1ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 03:49:47 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (21.4ms)
+Completed 200 OK in 191ms (Views: 27.1ms | ActiveRecord: 0.8ms)
+
+
+Started OPTIONS "/v2/login" for 103.23.18.55 at 2016-09-21 03:49:59 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (No route matches [OPTIONS] "/v2/login"):
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (93.3ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 22:05:50 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.3ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (2.6ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (50.4ms)
+Completed 200 OK in 164ms (Views: 75.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 22:06:00 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (139.6ms)
+Completed 200 OK in 150ms (Views: 147.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-09-21 22:06:28 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#login as JSON
+  Parameters: {"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example@railstutorial.org"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$wdDUwTyRqfjxbv9DYzFEf.e7LFz40M90AyCviOsoOM/R5jlTcFyIu"], ["updated_at", "2016-09-21 22:06:28.602571"], ["id", 1]]
+  [1m[36m (12.9ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 159ms (Views: 0.2ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 22:06:28 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.4ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (16.9ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-09-21 22:09:55 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#login as JSON
+  Parameters: {"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example@railstutorial.org"}}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$F4k5v0GXyXoWKmj1uF21ZenmOhZps0O9Y0z5GsSybolqmo/qqy7DO"], ["updated_at", "2016-09-21 22:09:55.406143"], ["id", 1]]
+  [1m[36m (51.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 52.6ms)
+
+
+Started GET "/v2/feeds/entries.json?page=1" for 103.23.18.55 at 2016-09-21 22:09:56 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::FeedsController#entries as JSON
+  Parameters: {"page"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", -1]]
+  [1m[36mFeed Load (0.5ms)[0m  [1mSELECT  "feeds"."id", "feeds"."feed_type", "feeds"."start_time", "feeds"."start_place", "feeds"."end_place", "feeds"."end_time", "feeds"."feed_content" FROM "feeds"  ORDER BY "feeds"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.4ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.5ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.3ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
+  Rendered api/v2/feeds/entries.json.jbuilder (141.9ms)
+Completed 200 OK in 148ms (Views: 146.1ms | ActiveRecord: 0.8ms)

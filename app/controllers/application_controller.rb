@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
   include UsersHelper
   
-  before_action :add_header
+  # before_action :add_header
   
-  def add_header
-    response.headers['Access-Control-Allow-Origin'] = '*'
-  end
+  # def add_header
+  #   response.headers['Access-Control-Allow-Origin'] = '*'
+  # end
 
 end

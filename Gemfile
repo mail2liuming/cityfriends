@@ -54,6 +54,8 @@ gem 'sqlite3'
   gem "rails-erd"
   
   gem 'swagger-docs'
+  
+  gem 'rack-cors', :require => 'rack/cors'
 end
 
 group :test do
