@@ -9,7 +9,7 @@ module UsersHelper
             if @user
                 @error = {status: 400, message: @user.errors.inspect}
             else
-                @error = {status: 501, message: 'no user'}
+                @error = {status: 400, message: 'no user'}
             end
             render partial: 'api/v2/shared/api_error', status: @error[:status]
         end 

@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
-    TYPE_PROVIDER = 1
-    TYPE_COMSUMER = 2
+    TYPE_STANDARD = 1
+    
     
     STATUS_ONGONIG = 1
     STATUS_DONE   =2
@@ -12,11 +12,11 @@ class Feed < ActiveRecord::Base
     default_scope ->{order(created_at: :desc)}
     
     validates :user, presence: true
-    validates :feed_type, presence: true
     
     private
       def init_feed
          self.status=STATUS_ONGONIG
+         self.feed_type = TYPE_STANDARD
          self.up=0
       end
 

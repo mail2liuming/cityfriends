@@ -7,7 +7,7 @@ module Api
             def show
                 feed = Feed.find_by(id: params[:id])
                 if feed 
-                    render json: feed.to_json(:only => [:id, :feed_type,:start_place,:start_time,:end_place,:end_time,:user_id ])
+                    render json: feed.to_json(:only => [:id, :feed_type,:start_place,:start_time,:user_id ])
                 else
                     render json: {:error => 'Not found'}
                 end
@@ -76,7 +76,7 @@ module Api
                     query = Feed.includes(:user).references(:user)
                 else
                     #TODO: plunk?
-                    query = Feed.select(:id,:feed_type,:start_time,:start_place,:end_place,:end_time,:feed_content)
+                    query = Feed.select(:id,:feed_type,:start_time,:start_place,:feed_content)
                 end
                 
                 #render json: query.paginate(page: cur_page,per_page: per_page)
@@ -86,8 +86,8 @@ module Api
             private 
             
                 def feed_params
-                    params.require(:feed).permit(:feed_type, :email, :flight_no,
-                                   :available,:start_place,:start_time,:end_place,:end_time)
+                    params.require(:feed).permit(
+                                   :feed_content,:start_place,:start_time)
                 end
         end
     end
