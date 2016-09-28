@@ -1,1 +1,0 @@
-json.array! @messages, partial: 'api/v2/in_site_messages/message', as: :message

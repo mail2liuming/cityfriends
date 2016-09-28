@@ -3,7 +3,7 @@ module Api
     class InSiteMessagesController < ApplicationController
         respond_to :json
         
-        before_action :check_auth?, only:[:create,:update,:destroy]
+        before_action :check_auth?, only:[:create,:update,:destroy,:index]
         
         
         def index
@@ -15,19 +15,22 @@ module Api
                 if params.has_key?(:page)
                     cur_page = params[:page]
                 end 
-                query = @user.messages.includes(:user).references(:user)
+                
+                query = InSiteMessage.includes(:sender,:receiver).where("sender_id=:user_id OR receiver_id=:user_id",user_id:@user.id)
                 @messages = query.paginate(page: cur_page,per_page: per_page)
         end
         
         def create
             @new_msg = @user.sending_messages.build(msg_params)
+            logger.info @new_msg
             if @new_msg.save
                 if @new_msg.msg_type == InSiteMessage::TYPE_ACCEPT_FRIEND
                     @new_msg.receiver.add_freind(@new_msg.sender)
                 end
-                render_success
+                render partial: 'api/v2/shared/api_success'
             else
-                render_error(400,@new_msg.errors)
+                @error = {status: 400, message: @new_msg.errors}
+                render partial: 'api/v2/shared/api_error', status: @error[:status]
             end
         end 
         

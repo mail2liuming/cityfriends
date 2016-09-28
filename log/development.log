@@ -44284,3 +44284,1244 @@ Processing by Api::V2::FeedsController#entries as JSON
   Rendered api/v2/feeds/_feed.json.jbuilder (0.2ms)
   Rendered api/v2/feeds/entries.json.jbuilder (40.4ms)
 Completed 200 OK in 51ms (Views: 46.9ms | ActiveRecord: 0.7ms)
+  [1m[36m (22.1ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (9.1ms)[0m  [1mCREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+
+  [1m[36m (7.9ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35m (10.5ms)[0m  CREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) 
+  [1m[36m (7.8ms)[0m  [1mCREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")[0m
+  [1m[35m (10.6ms)[0m  CREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.9ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (6.7ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")[0m
+  [1m[35m (8.1ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (6.8ms)[0m  [1mCREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (7.0ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (10.4ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) [0m
+  [1m[35m (9.0ms)[0m  CREATE  INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (11.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160814234226')
+  [1m[36m (9.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609043947')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601211444')
+  [1m[36m (10.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601225500')[0m
+  [1m[35m (6.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160620044811')
+  [1m[36m (8.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602030334')[0m
+  [1m[35m (6.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609013314')
+  [1m[36m (8.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602032021')[0m
+  [1m[35m (10.4ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (9.3ms)[0m  CREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+[0m
+  [1m[35m (10.8ms)[0m  CREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) [0m
+  [1m[35m (10.2ms)[0m  CREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (9.4ms)[0m  CREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (18.5ms)[0m  CREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")
+  [1m[36m (44.3ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (11.3ms)[0m  CREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (46.3ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (9.2ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) 
+  [1m[36m (8.6ms)[0m  [1mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (8.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (7.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160814234226')[0m
+  [1m[35m (8.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609043947')
+  [1m[36m (7.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601211444')[0m
+  [1m[35m (7.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601225500')
+  [1m[36m (7.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160620044811')[0m
+  [1m[35m (8.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602030334')
+  [1m[36m (7.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609013314')[0m
+  [1m[35m (14.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602032021')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@railstutorial.org"], ["password_digest", "$2a$10$e.eeOHK5QMQo6cPXJyOdrOqtUp4wJaDKbfC/RAEmL.fdIMNmabFGa"], ["created_at", "2016-09-28 21:17:38.672157"], ["updated_at", "2016-09-28 21:17:38.672157"], ["token_digest", "$2a$10$DzkX3FJhiWGU3MzuuH2c5uuXDSzUQeUJuzhEH5iL/sk1uXmlJkvD6"]]
+  [1m[35m (11.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User2') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Example User2"], ["email", "example2@railstutorial.org"], ["password_digest", "$2a$10$NbvdKEvZJu1fretufTQZt.Gf5Y9uhQZbV8bf6xs1IRhL239DNZ6Oy"], ["created_at", "2016-09-28 21:17:38.892503"], ["updated_at", "2016-09-28 21:17:38.892503"], ["token_digest", "$2a$10$oNJ5mxMo.ZKqHhas/I7z7OyMALMDZS7HjLf.jmTpLNuOR6vkePaJW"]]
+  [1m[36m (7.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User3') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example3@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User3"], ["email", "example3@railstutorial.org"], ["password_digest", "$2a$10$eFvOnBuHLE0aNsnj1E.3e.GzYHLbKajE16sCsB1C.JWzZSVxHCx9C"], ["created_at", "2016-09-28 21:17:39.104339"], ["updated_at", "2016-09-28 21:17:39.104339"], ["token_digest", "$2a$10$sZD0E.mI42oAfdwQts.QW.Hj670XAzpMQKvuZJ413isTW9mi/opIS"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."created_at" ASC LIMIT 3[0m
+  [1m[36m (28.7ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (7.6ms)[0m  [1mCREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+
+  [1m[36m (9.3ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35m (16.1ms)[0m  CREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) 
+  [1m[36m (6.7ms)[0m  [1mCREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")[0m
+  [1m[35m (6.5ms)[0m  CREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.5ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (6.6ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")[0m
+  [1m[35m (7.7ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.1ms)[0m  [1mCREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (6.6ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (6.7ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) [0m
+  [1m[35m (7.8ms)[0m  CREATE  INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160814234226')
+  [1m[36m (7.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609043947')[0m
+  [1m[35m (10.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601211444')
+  [1m[36m (7.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601225500')[0m
+  [1m[35m (6.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160620044811')
+  [1m[36m (8.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602030334')[0m
+  [1m[35m (6.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609013314')
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602032021')[0m
+  [1m[35m (9.4ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (6.8ms)[0m  CREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+[0m
+  [1m[35m (7.7ms)[0m  CREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) [0m
+  [1m[35m (8.5ms)[0m  CREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")
+  [1m[36m (9.0ms)[0m  [1mCREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (7.5ms)[0m  CREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (7.8ms)[0m  CREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")
+  [1m[36m (7.2ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.2ms)[0m  CREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (7.7ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (9.8ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (11.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) 
+  [1m[36m (7.9ms)[0m  [1mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (27.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160814234226')[0m
+  [1m[35m (11.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609043947')
+  [1m[36m (8.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601211444')[0m
+  [1m[35m (8.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601225500')
+  [1m[36m (6.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160620044811')[0m
+  [1m[35m (8.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602030334')
+  [1m[36m (6.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609013314')[0m
+  [1m[35m (9.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602032021')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@railstutorial.org"], ["password_digest", "$2a$10$fxlHKYw5655C2GeQqGwUjeUZ2jopmG1ejeoBNxBUj.YOD08YOPjgG"], ["created_at", "2016-09-28 21:19:21.151960"], ["updated_at", "2016-09-28 21:19:21.151960"], ["token_digest", "$2a$10$MWB1HO/pPmJJunjK5sUPGOOXmt/4TK9wqgK/7/1VgbCeWpCoqVpyS"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User2') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Example User2"], ["email", "example2@railstutorial.org"], ["password_digest", "$2a$10$Cvbtpw8xgJWVL2n4Pm0NV.m5tHYD8VWb1HvCLpNiS0GgMNQnlzNCu"], ["created_at", "2016-09-28 21:19:21.380772"], ["updated_at", "2016-09-28 21:19:21.380772"], ["token_digest", "$2a$10$1VuvIyvdrTFqvkA3cE.OjeQfWRDcj0q6D33q6uFFl6KBA0RRodQxa"]]
+  [1m[36m (9.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User3') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example3@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User3"], ["email", "example3@railstutorial.org"], ["password_digest", "$2a$10$sS3mr074hVF4NGNvK/5neOjNnN3nq0Ycs.DhXhJixVZL./.2FwAa2"], ["created_at", "2016-09-28 21:19:21.592372"], ["updated_at", "2016-09-28 21:19:21.592372"], ["token_digest", "$2a$10$dNEwKfnFfN813wEIiLAdY.1sPz.OOGV3n6cMtt0wbxuWpkOdGneWe"]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."created_at" ASC LIMIT 3[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_type", "feed_content", "user_id", "created_at", "updated_at", "status", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_type", 1], ["feed_content", "5kg available"], ["user_id", 1], ["created_at", "2016-09-28 21:19:21.785379"], ["updated_at", "2016-09-28 21:19:21.785379"], ["status", 1], ["up", 0]]
+  [1m[35m (12.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 1], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:19:21.814361"], ["updated_at", "2016-09-28 21:19:21.814361"]]
+  [1m[35m (7.2ms)[0m  commit transaction
+  [1m[36m (22.0ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (10.4ms)[0m  [1mCREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+
+  [1m[36m (7.0ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35m (6.8ms)[0m  CREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) 
+  [1m[36m (7.0ms)[0m  [1mCREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")[0m
+  [1m[35m (7.2ms)[0m  CREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (7.8ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (9.5ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")[0m
+  [1m[35m (11.9ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.0ms)[0m  [1mCREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (9.4ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (7.1ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) [0m
+  [1m[35m (8.2ms)[0m  CREATE  INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (28.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (9.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160814234226')
+  [1m[36m (6.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609043947')[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601211444')
+  [1m[36m (9.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601225500')[0m
+  [1m[35m (7.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160620044811')
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602030334')[0m
+  [1m[35m (7.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609013314')
+  [1m[36m (6.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602032021')[0m
+  [1m[35m (10.1ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (7.9ms)[0m  CREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+[0m
+  [1m[35m (10.1ms)[0m  CREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")
+  [1m[36m (7.6ms)[0m  [1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) [0m
+  [1m[35m (9.0ms)[0m  CREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (8.0ms)[0m  CREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (11.1ms)[0m  CREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")
+  [1m[36m (6.9ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (7.0ms)[0m  CREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (12.1ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (21.2ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) 
+  [1m[36m (7.0ms)[0m  [1mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (7.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (6.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160814234226')[0m
+  [1m[35m (7.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609043947')
+  [1m[36m (7.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601211444')[0m
+  [1m[35m (8.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601225500')
+  [1m[36m (7.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160620044811')[0m
+  [1m[35m (7.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602030334')
+  [1m[36m (8.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609013314')[0m
+  [1m[35m (6.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602032021')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@railstutorial.org"], ["password_digest", "$2a$10$l.pfyLWDb5YLrve.f81fu.G3gmKcsPM/DbMbnqQiFKMpOhQK8XFNS"], ["created_at", "2016-09-28 21:20:40.998899"], ["updated_at", "2016-09-28 21:20:40.998899"], ["token_digest", "$2a$10$nQdWBh40rSeZG1yAAlSH5.V6utCn63BYz2e2nMEP/fEyx1VdzU7Zy"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User2') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Example User2"], ["email", "example2@railstutorial.org"], ["password_digest", "$2a$10$7O/8KYrwcsHTc3fNgD5C1Oeh.PteHA1XTcLPCqTez9..dL0aa0QBm"], ["created_at", "2016-09-28 21:20:41.219235"], ["updated_at", "2016-09-28 21:20:41.219235"], ["token_digest", "$2a$10$HfB/i/WrUZQI7aflot2WCOuSgXfCXAUxLGJRp8D2w765x6iCYS/4."]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User3') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example3@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User3"], ["email", "example3@railstutorial.org"], ["password_digest", "$2a$10$9LZLGSuh2RTQ.A5qEKkbAeZ5Z4iTJVomaFvNCjrcnBCEfKWhhtYym"], ["created_at", "2016-09-28 21:20:41.431681"], ["updated_at", "2016-09-28 21:20:41.431681"], ["token_digest", "$2a$10$VjYKBuEEwRvk/tnqCMpua.R1FdO5qdBF2QnGD.JGR6HFijyvn6KLK"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."created_at" ASC LIMIT 3[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:20:41.622052"], ["updated_at", "2016-09-28 21:20:41.622052"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (7.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 1], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:20:41.663682"], ["updated_at", "2016-09-28 21:20:41.663682"]]
+  [1m[35m (34.7ms)[0m  commit transaction
+  [1m[36m (10.2ms)[0m  [1mCREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (10.9ms)[0m  [1mCREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+
+  [1m[36m (18.0ms)[0m  [1mCREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")[0m
+  [1m[35m (12.3ms)[0m  CREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) 
+  [1m[36m (11.8ms)[0m  [1mCREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")[0m
+  [1m[35m (15.7ms)[0m  CREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (11.0ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+
+  [1m[36m (14.8ms)[0m  [1mCREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")[0m
+  [1m[35m (9.9ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (9.4ms)[0m  [1mCREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (9.9ms)[0m  [1mCREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (11.3ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (9.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) [0m
+  [1m[35m (7.7ms)[0m  CREATE  INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (9.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (7.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (8.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160814234226')
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609043947')[0m
+  [1m[35m (8.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601211444')
+  [1m[36m (13.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601225500')[0m
+  [1m[35m (19.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160620044811')
+  [1m[36m (28.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602030334')[0m
+  [1m[35m (10.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609013314')
+  [1m[36m (6.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160602032021')[0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE "calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_id" integer, "calendar_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "exact_time" datetime) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (8.9ms)[0m  CREATE  INDEX "index_calendars_on_feed_id" ON "calendars" ("feed_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_calendars_on_feed_id' AND type='index'
+[0m
+  [1m[35m (9.0ms)[0m  CREATE  INDEX "index_calendars_on_user_id" ON "calendars" ("user_id")
+  [1m[36m (6.7ms)[0m  [1mCREATE TABLE "feeds" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "feed_type" integer, "feed_content" varchar, "start_place" varchar, "start_time" datetime, "end_place" varchar, "end_time" datetime, "reserved_column" varchar, "up" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer) [0m
+  [1m[35m (8.2ms)[0m  CREATE  INDEX "index_feeds_on_user_id" ON "feeds" ("user_id")
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "in_site_messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sender_id" integer, "receiver_id" integer, "msg_content" varchar, "status" integer, "msg_type" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (6.9ms)[0m  CREATE  INDEX "index_in_site_messages_on_receiver_id" ON "in_site_messages" ("receiver_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_in_site_messages_on_receiver_id' AND type='index'
+[0m
+  [1m[35m (7.9ms)[0m  CREATE  INDEX "index_in_site_messages_on_sender_id" ON "in_site_messages" ("sender_id")
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "positive_user_id" integer, "status" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (7.9ms)[0m  CREATE  INDEX "index_relationships_on_positive_user_id" ON "relationships" ("positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+[0m
+  [1m[35m (7.2ms)[0m  CREATE UNIQUE INDEX "index_relationships_on_user_id_and_positive_user_id" ON "relationships" ("user_id", "positive_user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id_and_positive_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_positive_user_id' AND type='index'
+
+  [1m[36m (7.6ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (10.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "token_digest" varchar) 
+  [1m[36m (9.7ms)[0m  [1mCREATE  INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (9.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (10.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160814234226')[0m
+  [1m[35m (22.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160609043947')
+  [1m[36m (8.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160601211444')[0m
+  [1m[35m (9.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160601225500')
+  [1m[36m (7.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160620044811')[0m
+  [1m[35m (8.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602030334')
+  [1m[36m (7.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160609013314')[0m
+  [1m[35m (7.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160602032021')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User"], ["email", "example@railstutorial.org"], ["password_digest", "$2a$10$WTsSCj/izmKHKRj1xg1fXO6S7PJkVDnzPycUfatdCdgUURnAorWRq"], ["created_at", "2016-09-28 21:21:40.778046"], ["updated_at", "2016-09-28 21:21:40.778046"], ["token_digest", "$2a$10$Y3HpBFz3DyEVUxXIQ94TWO3PP5WH1EJh93q0FcNxaZ3R/Fj9mzv5a"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User2') LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example2@railstutorial.org') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Example User2"], ["email", "example2@railstutorial.org"], ["password_digest", "$2a$10$bAKbR0wJe0wG/e3T/5qTQ.t8PtjepQndd/t3Jm6slLm5BKaV8l7By"], ["created_at", "2016-09-28 21:21:40.998077"], ["updated_at", "2016-09-28 21:21:40.998077"], ["token_digest", "$2a$10$xqKH5LzhhOY.QUSuPYzQAOcfz9sTIzSTcR7Bn7raWJgBTKzbJ1NAy"]]
+  [1m[36m (10.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User3') LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example3@railstutorial.org') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "token_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Example User3"], ["email", "example3@railstutorial.org"], ["password_digest", "$2a$10$3njTDD2fjFwsQXGNH4UnXeduaNkGE4eyH0btOJAnVWHS0AGnoukWe"], ["created_at", "2016-09-28 21:21:41.216768"], ["updated_at", "2016-09-28 21:21:41.216768"], ["token_digest", "$2a$10$D8xYfg0QNzze7nJ6CmK5y.7kkRp9ysTKdojHRpTiXMQkfO/yD8ICy"]]
+  [1m[35m (7.6ms)[0m  commit transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."created_at" ASC LIMIT 3[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.404725"], ["updated_at", "2016-09-28 21:21:41.404725"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (10.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 1], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.431677"], ["updated_at", "2016-09-28 21:21:41.431677"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-28 21:21:41.455205"], ["updated_at", "2016-09-28 21:21:41.455205"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.466544"], ["updated_at", "2016-09-28 21:21:41.466544"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (31.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 2], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.509271"], ["updated_at", "2016-09-28 21:21:41.509271"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 2], ["created_at", "2016-09-28 21:21:41.522479"], ["updated_at", "2016-09-28 21:21:41.522479"]]
+  [1m[36m (18.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.544714"], ["updated_at", "2016-09-28 21:21:41.544714"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 3]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 3], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.558595"], ["updated_at", "2016-09-28 21:21:41.558595"]]
+  [1m[35m (18.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 3], ["created_at", "2016-09-28 21:21:41.580475"], ["updated_at", "2016-09-28 21:21:41.580475"]]
+  [1m[36m (17.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.602999"], ["updated_at", "2016-09-28 21:21:41.602999"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 4]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 4], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.615389"], ["updated_at", "2016-09-28 21:21:41.615389"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-28 21:21:41.626834"], ["updated_at", "2016-09-28 21:21:41.626834"]]
+  [1m[36m (6.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.636589"], ["updated_at", "2016-09-28 21:21:41.636589"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 5]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 5], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.650939"], ["updated_at", "2016-09-28 21:21:41.650939"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 2], ["created_at", "2016-09-28 21:21:41.669692"], ["updated_at", "2016-09-28 21:21:41.669692"]]
+  [1m[36m (20.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.694041"], ["updated_at", "2016-09-28 21:21:41.694041"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 6]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 6], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.708609"], ["updated_at", "2016-09-28 21:21:41.708609"]]
+  [1m[35m (9.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 3], ["created_at", "2016-09-28 21:21:41.721965"], ["updated_at", "2016-09-28 21:21:41.721965"]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.732939"], ["updated_at", "2016-09-28 21:21:41.732939"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (20.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 7]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 7], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.758371"], ["updated_at", "2016-09-28 21:21:41.758371"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-28 21:21:41.769237"], ["updated_at", "2016-09-28 21:21:41.769237"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.782059"], ["updated_at", "2016-09-28 21:21:41.782059"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (6.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 8]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 8], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.793512"], ["updated_at", "2016-09-28 21:21:41.793512"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 2], ["created_at", "2016-09-28 21:21:41.804979"], ["updated_at", "2016-09-28 21:21:41.804979"]]
+  [1m[36m (9.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.818739"], ["updated_at", "2016-09-28 21:21:41.818739"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 9]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 9], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.833641"], ["updated_at", "2016-09-28 21:21:41.833641"]]
+  [1m[35m (11.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 3], ["created_at", "2016-09-28 21:21:41.848490"], ["updated_at", "2016-09-28 21:21:41.848490"]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.861042"], ["updated_at", "2016-09-28 21:21:41.861042"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (11.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 10]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 10], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.877566"], ["updated_at", "2016-09-28 21:21:41.877566"]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-28 21:21:41.890126"], ["updated_at", "2016-09-28 21:21:41.890126"]]
+  [1m[36m (7.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.901516"], ["updated_at", "2016-09-28 21:21:41.901516"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (7.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 11]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 11], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 2], ["created_at", "2016-09-28 21:21:41.914781"], ["updated_at", "2016-09-28 21:21:41.914781"]]
+  [1m[35m (6.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 2], ["created_at", "2016-09-28 21:21:41.924404"], ["updated_at", "2016-09-28 21:21:41.924404"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.936289"], ["updated_at", "2016-09-28 21:21:41.936289"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 12]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 12], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 3], ["created_at", "2016-09-28 21:21:41.950078"], ["updated_at", "2016-09-28 21:21:41.950078"]]
+  [1m[35m (7.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 3], ["created_at", "2016-09-28 21:21:41.960815"], ["updated_at", "2016-09-28 21:21:41.960815"]]
+  [1m[36m (9.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.973698"], ["updated_at", "2016-09-28 21:21:41.973698"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.1ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 13]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 13], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 1], ["created_at", "2016-09-28 21:21:41.986857"], ["updated_at", "2016-09-28 21:21:41.986857"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-28 21:21:41.996352"], ["updated_at", "2016-09-28 21:21:41.996352"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 2], ["created_at", "2016-09-28 21:21:42.008317"], ["updated_at", "2016-09-28 21:21:42.008317"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 14]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 14], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 2], ["created_at", "2016-09-28 21:21:42.022190"], ["updated_at", "2016-09-28 21:21:42.022190"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 2], ["created_at", "2016-09-28 21:21:42.032922"], ["updated_at", "2016-09-28 21:21:42.032922"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feeds" ("start_place", "start_time", "end_place", "end_time", "feed_content", "user_id", "created_at", "updated_at", "status", "feed_type", "up") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["start_place", "hongkong"], ["start_time", "2016-06-10 00:00:00.000000"], ["end_place", "auckland"], ["end_time", "2016-06-29 00:00:00.000000"], ["feed_content", "has holiday"], ["user_id", 3], ["created_at", "2016-09-28 21:21:42.045046"], ["updated_at", "2016-09-28 21:21:42.045046"], ["status", 1], ["feed_type", 1], ["up", 0]]
+  [1m[35m (8.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mFeed Load (0.2ms)[0m  SELECT  "feeds".* FROM "feeds" WHERE "feeds"."id" = ?  ORDER BY "feeds"."created_at" DESC LIMIT 1  [["id", 15]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "calendars" ("feed_id", "calendar_type", "exact_time", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["feed_id", 15], ["calendar_type", 1], ["exact_time", "2016-06-11 00:00:00.000000"], ["user_id", 3], ["created_at", "2016-09-28 21:21:42.058714"], ["updated_at", "2016-09-28 21:21:42.058714"]]
+  [1m[35m (6.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 3], ["created_at", "2016-09-28 21:21:42.068534"], ["updated_at", "2016-09-28 21:21:42.068534"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER('Example User') LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('example@railstutorial.org') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-09-28 21:24:48 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V2::UsersController#login as */*
+  Parameters: {"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example@railstutorial.org"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$/bu6KwXzXKs6eoPc4UXAiepVQOs86lguMpCbwX2PDJvl0x1ojbbxK"], ["updated_at", "2016-09-28 21:24:49.586954"], ["id", 1]]
+  [1m[36m (16.3ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 205ms (Views: 0.1ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:25:21 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.4ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (3, 1)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.7ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (136.2ms)
+Completed 200 OK in 248ms (Views: 171.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:27:05 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.4ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (3, 1)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 2)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.7ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (53.6ms)
+Completed 200 OK in 138ms (Views: 66.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:29:32 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>"2", "msg_type"=>"4", "msg_content"=>"Hi"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."positive_user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["positive_user_id", 1], ["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 4.8ms)
+
+NoMethodError (undefined method `render_error' for #<Api::V2::InSiteMessagesController:0x000000027d8780>
+Did you mean?  rendered_format):
+  app/controllers/api/v2/in_site_messages_controller.rb:31:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.5ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:33:36 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>"2", "msg_type"=>"4", "msg_content"=>"Hi"}, "in_site_message"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 1.5ms)
+
+NameError (undefined local variable or method `log' for #<Api::V2::InSiteMessagesController:0x0000000133c7e0>
+Did you mean?  loop):
+  app/controllers/api/v2/in_site_messages_controller.rb:25:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.7ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:33:50 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>"2", "msg_type"=>"4", "msg_content"=>"Hi"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<InSiteMessage:0x000000039e62b0>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."positive_user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["positive_user_id", 1], ["id", 2]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered api/v2/shared/_api_error.json.jbuilder (0.7ms)
+Completed 400 Bad Request in 137ms (Views: 16.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/v2/add_friend" for 103.23.18.55 at 2016-09-28 21:43:40 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+ActionController::RoutingError (uninitialized constant Api::V2::Users):
+  activesupport (4.2.2) lib/active_support/inflector/methods.rb:263:in `const_get'
+  activesupport (4.2.2) lib/active_support/inflector/methods.rb:263:in `block in constantize'
+  activesupport (4.2.2) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.2) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.2) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.2) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.2) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.2) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:20:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.2) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  rack-cors (0.4.0) lib/rack/cors.rb:80:in `call'
+  railties (4.2.2) lib/rails/engine.rb:518:in `call'
+  railties (4.2.2) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/local/rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (20.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (108.1ms)
+
+
+Started POST "/v2/add_friend" for 103.23.18.55 at 2016-09-28 21:47:33 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#add_friend as */*
+  Parameters: {"friend_id"=>"2", "user"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.3ms)
+
+NoMethodError (undefined method `add_friend' for nil:NilClass):
+  app/controllers/api/v2/users_controller.rb:61:in `add_friend'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.5ms)
+
+
+Started POST "/v2/add_friend" for 103.23.18.55 at 2016-09-28 21:48:14 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#add_friend as */*
+  Parameters: {"friend_id"=>"2", "user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."positive_user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["positive_user_id", 1], ["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "relationships" ("positive_user_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["positive_user_id", 2], ["user_id", 1], ["created_at", "2016-09-28 21:48:15.270066"], ["updated_at", "2016-09-28 21:48:15.270066"]]
+  [1m[35m (8.4ms)[0m  commit transaction
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.8ms)
+Completed 200 OK in 244ms (Views: 19.5ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:50:00 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>"2", "msg_type"=>"4", "msg_content"=>"Hi"}, "in_site_message"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+#<InSiteMessage:0x007efd7cd0c7f0>
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 4], ["msg_content", "Hi"], ["sender_id", 1], ["created_at", "2016-09-28 21:50:01.199294"], ["updated_at", "2016-09-28 21:50:01.199294"]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.3ms)
+Completed 200 OK in 211ms (Views: 16.5ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 21:50:23 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.4ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 1)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.3ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (88.2ms)
+Completed 200 OK in 176ms (Views: 104.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 21:51:24 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 0.5ms)
+
+ActiveRecord::AssociationNotFoundError (Association named 'positive_user' was not found on User; perhaps you misspelled it?):
+  app/controllers/api/v2/users_controller.rb:52:in `friends'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.3ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 21:54:18 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 2.4ms)
+
+NameError (undefined local variable or method `log' for #<Api::V2::UsersController:0x007efd7d59d0e0>
+Did you mean?  login):
+  app/controllers/api/v2/users_controller.rb:53:in `friends'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (90.7ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 21:54:30 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  Rendered api/v2/users/friends.json.jbuilder (0.7ms)
+Completed 200 OK in 161ms (Views: 24.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 21:58:13 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  Rendered api/v2/users/_friend.json.jbuilder (34.2ms)
+  Rendered api/v2/users/friends.json.jbuilder (40.6ms)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 3.7ms)
+
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+    1: 
+    2: if @friend.user
+    3:     json.id @friend.user.id
+    4:     json.name @freind.user.name
+    5: elsif @freind.positive_user
+  app/views/api/v2/users/_friend.json.jbuilder:2:in `_app_views_api_v__users__friend_json_jbuilder___2656203227473653683_69813601358920'
+  app/views/api/v2/users/friends.json.jbuilder:1:in `_app_views_api_v__users_friends_json_jbuilder__2210846684594878081_69813604198120'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.4ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 21:59:37 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered api/v2/users/_friend.json.jbuilder (39.5ms)
+  Rendered api/v2/users/friends.json.jbuilder (43.5ms)
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined local variable or method `freind' for #<#<Class:0x007efd7dd59bf8>:0x007efd7cfb3198>
+Did you mean?  friend):
+    1: 
+    2: if friend.user
+    3:     json.id friend.user.id
+    4:     json.name freind.user.name
+    5: elsif freind.positive_user
+    6:     json.id freind.positive_user.id
+    7:     json.name freind.positive_user.name
+  app/views/api/v2/users/_friend.json.jbuilder:4:in `_app_views_api_v__users__friend_json_jbuilder___2656203227473653683_69813594359240'
+  app/views/api/v2/users/friends.json.jbuilder:1:in `_app_views_api_v__users_friends_json_jbuilder__2210846684594878081_69813604198120'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.5ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 22:00:00 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2)[0m
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered api/v2/users/_friend.json.jbuilder (1.6ms)
+  Rendered api/v2/users/friends.json.jbuilder (6.3ms)
+Completed 200 OK in 125ms (Views: 20.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 22:04:56 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered api/v2/users/_friend.json.jbuilder (52.6ms)
+  Rendered api/v2/users/friends.json.jbuilder (56.5ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined local variable or method `freind' for #<#<Class:0x007efd7dd59bf8>:0x007efd7cef6d90>
+Did you mean?  friend):
+    2: if friend.user.id != @user.id
+    3:     json.id friend.user.id
+    4:     json.name friend.user.name
+    5: elsif freind.positive_user.id != @user.id
+    6:     json.id friend.positive_user.id
+    7:     json.name friend.positive_user.name
+    8: end
+  app/views/api/v2/users/_friend.json.jbuilder:5:in `_app_views_api_v__users__friend_json_jbuilder___2656203227473653683_69813593870680'
+  app/views/api/v2/users/friends.json.jbuilder:1:in `_app_views_api_v__users_friends_json_jbuilder__2210846684594878081_69813604198120'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.2ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 22:05:16 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?  [["user_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2)[0m
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered api/v2/users/_friend.json.jbuilder (65.8ms)
+  Rendered api/v2/users/friends.json.jbuilder (70.9ms)
+Completed 200 OK in 155ms (Views: 83.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 22:07:40 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  Rendered api/v2/users/_friend.json.jbuilder (52.2ms)
+  Rendered api/v2/users/friends.json.jbuilder (55.6ms)
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined local variable or method `user_id' for #<#<Class:0x007efd7dd59bf8>:0x007efd7dcbdd48>
+Did you mean?  @user):
+    1: 
+    2: if user_id != @user.id
+    3:     json.id friend.user.id
+    4:     json.name friend.user.name
+    5: elsif positive_user_id != @user.id
+  app/views/api/v2/users/_friend.json.jbuilder:2:in `_app_views_api_v__users__friend_json_jbuilder___2656203227473653683_69813601319780'
+  app/views/api/v2/users/friends.json.jbuilder:1:in `_app_views_api_v__users_friends_json_jbuilder__2210846684594878081_69813604198120'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.7ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 22:08:29 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  Rendered api/v2/users/_friend.json.jbuilder (8.2ms)
+  Rendered api/v2/users/friends.json.jbuilder (12.1ms)
+Completed 200 OK in 135ms (Views: 58.5ms | ActiveRecord: 0.8ms)

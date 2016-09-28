@@ -3,7 +3,7 @@ module Api
 
     class UsersController < ApplicationController
       respond_to :json
-      before_action :check_auth?, only:[:show,:update,:freinds,:add_freind,:delete_freind]
+      before_action :check_auth?, only:[:show,:update,:friends,:add_friend,:delete_friend]
       
       def show
         
@@ -48,30 +48,32 @@ module Api
       def update
       end
       
-      def freinds
-        @user.freinds
+      def friends
+        #TODO it is not best practise?
+        @friends = @user.active_relationship.includes(:positive_user) + @user.positive_relationship.includes(:user)
+        logger.info @friends
+        @friends
+        
       end
       
-      def messages
-        @user.sending_messages.includes(:receiver).references(:receiver)+@user.receiving_messages.includes(:sender).references(:sender)
-      end
-      
-      def add_freind
-        @freind = User.find_by(id: params[:freind_id])
-        if @freind
-          @user.add_freind(@freind)
-          render json: {:success =>true}
+      def add_friend
+        @friend = User.find_by(id: params[:friend_id])
+        if @friend
+          @user.add_friend(@friend)
+          render partial: 'api/v2/shared/api_success'
         else
-          render json: {:error =>"No this user"}
+          @error = {status: 400, message: 'No this user'}
+          render partial: 'api/v2/shared/api_error', status: @error[:status]
         end
       end
       
-      def delete_freind
-        @freind = User.find_by(id: params[:freind_id])
-        if @freind && @user.delete_freind(@freind)
-          render json: {:success =>true}
+      def delete_friend
+        @friend = User.find_by(id: params[:friend_id])
+        if @friend && @user.delete_friend(@friend)
+          render partial: 'api/v2/shared/api_success'
         else
-          render json: {:error =>"No this user"}
+          @error = {status: 400, message: 'No this user'}
+          render partial: 'api/v2/shared/api_error', status: @error[:status]
         end
       end
       

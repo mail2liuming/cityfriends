@@ -8,15 +8,15 @@ Rails.application.routes.draw do
         post 'signup' => 'users#create'
         post 'login' => 'users#login'
         
-        post 'add_freind' =>'users/add_freind'
-        post 'delete_freind' => 'users/delete_freind/'
+        post 'add_friend' =>'users#add_friend'
+        post 'delete_friend' => 'users#delete_friend'
         
         resources :users, only: [:show] do
           member do
             post :update
           end
           collection do
-            get :freinds
+            get :friends
           end
         end
         
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
         end
         
         resources :relationships, only: [:create, :destroy]
-        resources :in_site_messages, only: [:create,:update,:destroy] do
+        resources :in_site_messages, only: [:create,:update,:destroy,:index] do
           collection do
             post :unreads
           end
