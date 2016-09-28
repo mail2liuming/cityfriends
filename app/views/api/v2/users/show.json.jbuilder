@@ -1,1 +1,1 @@
-json.partial! "api/v2/users/user", user: @user
+json.(@found_user,:id,:name,:email)

@@ -6,7 +6,7 @@ module Api
       before_action :check_auth?, only:[:show,:update,:friends,:add_friend,:delete_friend]
       
       def show
-        
+        @found_user = User.find_by(id: params[:id])
       end
   
       swagger_controller :users, 'users'

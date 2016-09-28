@@ -1,2 +1,2 @@
-json.(@user,:id,:name,:email,:token)
+json.(user,:id,:name,:email,:token)
 

@@ -45525,3 +45525,13 @@ Processing by Api::V2::UsersController#friends as */*
   Rendered api/v2/users/_friend.json.jbuilder (8.2ms)
   Rendered api/v2/users/friends.json.jbuilder (12.1ms)
 Completed 200 OK in 135ms (Views: 58.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/v2/users/1" for 103.23.18.55 at 2016-09-28 22:37:17 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered api/v2/users/show.json.jbuilder (0.7ms)
+Completed 200 OK in 117ms (Views: 14.3ms | ActiveRecord: 1.2ms)
