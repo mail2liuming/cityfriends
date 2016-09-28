@@ -1,0 +1,1 @@
+json.array! @friends, partial: 'api/v2/users/friend', as: :friend

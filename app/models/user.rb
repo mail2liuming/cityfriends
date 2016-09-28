@@ -72,6 +72,10 @@ class User < ActiveRecord::Base
         active_freinds + positive_freinds
     end
     
+    def messages
+        sending_messages + receiving_messages
+    end
+    
     def freind?(other_user)
         active_freinds.exists?(other_user.id) || positive_freinds.exists?(other_user.id)
     end

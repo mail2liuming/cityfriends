@@ -49,7 +49,11 @@ module Api
       end
       
       def freinds
-        render json:  @user.freinds
+        @user.freinds
+      end
+      
+      def messages
+        @user.sending_messages.includes(:receiver).references(:receiver)+@user.receiving_messages.includes(:sender).references(:sender)
       end
       
       def add_freind
