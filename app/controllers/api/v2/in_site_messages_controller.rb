@@ -74,7 +74,7 @@ module Api
         private 
         
             def msg_params
-                params.require(:msg).permit(:receiver_id, :msg_type, :msg_content)
+                params.require(:in_site_message).permit(:receiver_id, :msg_type, :msg_content)
             end
     end
   end
