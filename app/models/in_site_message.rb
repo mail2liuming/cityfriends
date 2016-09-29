@@ -12,6 +12,8 @@ class InSiteMessage < ActiveRecord::Base
     belongs_to :sender ,class_name: "User"
     belongs_to :receiver, class_name: "User"
     
+    before_create :init_msg
+    
     validates :sender_id, presence: true
     validates :receiver_id, presence: true
     validates :msg_type,presence: true
@@ -32,6 +34,10 @@ class InSiteMessage < ActiveRecord::Base
               errors.add(:receiver, "must be a friend")
               false
           end
+      end
+      
+      def init_msg
+         self.status=STATUS_UNREAD
       end
         
 end

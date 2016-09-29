@@ -25,7 +25,11 @@ module Api
             logger.info @new_msg
             if @new_msg.save
                 if @new_msg.msg_type == InSiteMessage::TYPE_ACCEPT_FRIEND
-                    @new_msg.receiver.add_freind(@new_msg.sender)
+                    @new_msg.receiver.add_friend(@new_msg.sender)
+                    @request_msg = @user.receiving_messages.where("msg_type=1 and sender_id=:receiver_id",receiver_id: @new_msg.receiver_id).first
+                    if @request_msg
+                        @request_msg.update_attribute(:status, InSiteMessage::STATUS_READ)
+                    end
                 end
                 render partial: 'api/v2/shared/api_success'
             else
@@ -38,9 +42,10 @@ module Api
             @msg = InSiteMessage.find_by(id: params[:msg_id])
             if @msg
                 @msg.update_attribute(status: params[:status])
-                render json: {:success =>true}
+                render partial: 'api/v2/shared/api_success'
             else
-                render json: {:error =>@msg.errors}
+                @error = {status: 400, message: @msg.errors}
+                render partial: 'api/v2/shared/api_error', status: @error[:status]
             end
         end 
         

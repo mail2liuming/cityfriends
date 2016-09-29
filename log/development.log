@@ -45535,3 +45535,377 @@ Processing by Api::V2::UsersController#show as */*
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
   Rendered api/v2/users/show.json.jbuilder (0.7ms)
 Completed 200 OK in 117ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/v2/users/friends" for 103.23.18.55 at 2016-09-28 23:43:07 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#friends as */*
+  Parameters: {"user"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (2)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT "relationships".* FROM "relationships" WHERE "relationships"."positive_user_id" = ?[0m  [["positive_user_id", 1]]
+[#<Relationship id: 1, user_id: 1, positive_user_id: 2, status: nil, created_at: "2016-09-28 21:48:15", updated_at: "2016-09-28 21:48:15">]
+  Rendered api/v2/users/_friend.json.jbuilder (0.2ms)
+  Rendered api/v2/users/friends.json.jbuilder (9.1ms)
+Completed 200 OK in 122ms (Views: 26.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 23:50:44 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.7ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 1)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.4ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.3ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (100.8ms)
+Completed 200 OK in 195ms (Views: 119.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 23:57:42 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>2, "msg_type"=>"4", "msg_content"=>"Howdy"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<InSiteMessage:0x0000000390f5f8>
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 2]]
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["receiver_id", 2], ["msg_type", 4], ["msg_content", "Howdy"], ["sender_id", 1], ["created_at", "2016-09-28 23:57:42.244845"], ["updated_at", "2016-09-28 23:57:42.244845"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.3ms)
+Completed 200 OK in 120ms (Views: 15.2ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-28 23:58:46 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>2, "msg_type"=>4, "msg_content"=>"lala"}, "in_site_message"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+#<InSiteMessage:0x00000003796a28>
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["user_id", 1], ["id", 2]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["receiver_id", 2], ["msg_type", 4], ["msg_content", "lala"], ["sender_id", 1], ["created_at", "2016-09-28 23:58:46.248311"], ["updated_at", "2016-09-28 23:58:46.248311"]]
+  [1m[36m (12.0ms)[0m  [1mcommit transaction[0m
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.5ms)
+Completed 200 OK in 164ms (Views: 17.2ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:09:37 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.7ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (2, 1)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (159.6ms)
+Completed 200 OK in 244ms (Views: 172.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:44:37 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>3, "msg_type"=>1, "msg_content"=>"add friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<InSiteMessage:0x007efd7cd1adc8>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 3], ["msg_type", 1], ["msg_content", "add friend"], ["sender_id", 1], ["created_at", "2016-09-29 00:44:37.520837"], ["updated_at", "2016-09-29 00:44:37.520837"], ["status", 15]]
+  [1m[36m (12.4ms)[0m  [1mcommit transaction[0m
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.3ms)
+Completed 200 OK in 123ms (Views: 14.3ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/v2/login" for 103.23.18.55 at 2016-09-29 00:45:14 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::UsersController#login as */*
+  Parameters: {"email"=>"example3@railstutorial.org", "password"=>"[FILTERED]", "user"=>{"email"=>"example3@railstutorial.org"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "example3@railstutorial.org"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "token_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["token_digest", "$2a$10$xMcZd5i77N3BOIqk3.hm7u0KxkzG2ci2UXU7csY7ox2mQsbC2PNE2"], ["updated_at", "2016-09-29 00:45:15.063779"], ["id", 3]]
+  [1m[36m (10.0ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 153ms (Views: 0.2ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:45:57 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>2, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered api/v2/shared/_api_error.json.jbuilder (0.3ms)
+Filter chain halted as :check_auth? rendered or redirected
+Completed 400 Bad Request in 191ms (Views: 119.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:46:27 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered api/v2/shared/_api_error.json.jbuilder (0.2ms)
+Filter chain halted as :check_auth? rendered or redirected
+Completed 400 Bad Request in 81ms (Views: 11.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:47:13 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x007efd7d355918>
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:47:13.573425"], ["updated_at", "2016-09-29 00:47:13.573425"], ["status", 15]]
+  [1m[36m (8.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 10.4ms)
+
+NoMethodError (undefined method `add_freind' for #<User:0x007efd7d453ce8>
+Did you mean?  add_friend):
+  app/controllers/api/v2/in_site_messages_controller.rb:28:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (93.9ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:47:45 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x007efd7dd23a08>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:47:45.819536"], ["updated_at", "2016-09-29 00:47:45.819536"], ["status", 15]]
+  [1m[36m (10.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."positive_user_id" = ? AND "users"."id" = ? LIMIT 1[0m  [["positive_user_id", 1], ["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "relationships" ("positive_user_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["positive_user_id", 3], ["user_id", 1], ["created_at", "2016-09-29 00:47:45.856108"], ["updated_at", "2016-09-29 00:47:45.856108"]]
+  [1m[35m (13.6ms)[0m  commit transaction
+  [1m[36mInSiteMessage Load (0.7ms)[0m  [1mSELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC[0m  [["receiver_id", 3]]
+SQLite3::SQLException: unrecognized token: ":": SELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC
+Completed 500 Internal Server Error in 246ms (ActiveRecord: 28.2ms)
+  [1m[35mInSiteMessage Load (0.3ms)[0m  SELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC  [["receiver_id", 3]]
+SQLite3::SQLException: unrecognized token: ":": SELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC
+
+NoMethodError (undefined method `update_attribute' for #<InSiteMessage::ActiveRecord_AssociationRelation:0x007efd7d530b98>
+Did you mean?  update_all):
+  app/controllers/api/v2/in_site_messages_controller.rb:31:in `create'
+
+
+  [1m[36mInSiteMessage Load (0.6ms)[0m  [1mSELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC[0m  [["receiver_id", 3]]
+SQLite3::SQLException: unrecognized token: ":": SELECT "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.5ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:51:11 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x00000003ed5a28>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:51:11.438084"], ["updated_at", "2016-09-29 00:51:11.438084"], ["status", 15]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mInSiteMessage Load (0.6ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1[0m  [["receiver_id", 3]]
+SQLite3::SQLException: unrecognized token: ":": SELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 11.3ms)
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: unrecognized token: ":": SELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=InSiteMessage::TYPE_REQUEST_FRIEND and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1):
+  app/controllers/api/v2/in_site_messages_controller.rb:29:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.2ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:52:18 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x007efd7dbedb98>
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:52:18.674524"], ["updated_at", "2016-09-29 00:52:18.674524"], ["status", 15]]
+  [1m[36m (10.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mInSiteMessage Load (0.3ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=2 and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1[0m  [["receiver_id", 3]]
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.2ms)
+Completed 200 OK in 144ms (Views: 13.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:52:43 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mInSiteMessage Load (0.4ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=3 OR receiver_id=3)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (3, 1, 2)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (127.8ms)
+Completed 200 OK in 211ms (Views: 140.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:53:59 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mInSiteMessage Load (0.4ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (3, 1)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3, 2)[0m
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (34.8ms)
+Completed 200 OK in 110ms (Views: 39.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:55:00 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x007efd7dcfdf88>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:55:00.197705"], ["updated_at", "2016-09-29 00:55:00.197705"], ["status", 15]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mInSiteMessage Load (0.2ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=1 and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1[0m  [["receiver_id", 3]]
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 11.0ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  app/controllers/api/v2/in_site_messages_controller.rb:31:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.1ms)
+
+
+Started POST "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:56:21 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#create as */*
+  Parameters: {"msg"=>{"receiver_id"=>1, "msg_type"=>"2", "msg_content"=>"accept friend"}, "in_site_message"=>{}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+#<InSiteMessage:0x0000000376e050>
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "in_site_messages" ("receiver_id", "msg_type", "msg_content", "sender_id", "created_at", "updated_at", "status") VALUES (?, ?, ?, ?, ?, ?, ?)  [["receiver_id", 1], ["msg_type", 2], ["msg_content", "accept friend"], ["sender_id", 3], ["created_at", "2016-09-29 00:56:21.691650"], ["updated_at", "2016-09-29 00:56:21.691650"], ["status", 15]]
+  [1m[36m (10.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."positive_user_id" WHERE "relationships"."user_id" = ? AND "users"."id" = ? LIMIT 1  [["user_id", 1], ["id", 3]]
+  [1m[36mInSiteMessage Load (0.2ms)[0m  [1mSELECT  "in_site_messages".* FROM "in_site_messages" WHERE "in_site_messages"."receiver_id" = ? AND (msg_type=1 and sender_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 1[0m  [["receiver_id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "in_site_messages" SET "status" = ?, "updated_at" = ? WHERE "in_site_messages"."id" = ?[0m  [["status", 16], ["updated_at", "2016-09-29 00:56:21.720830"], ["id", 19]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  Rendered api/v2/shared/_api_success.json.jbuilder (0.3ms)
+Completed 200 OK in 137ms (Views: 5.1ms | ActiveRecord: 23.2ms)
+
+
+Started GET "/v2/in_site_messages" for 103.23.18.55 at 2016-09-29 00:56:28 +0000
+Cannot render console from 103.23.18.55! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Api::V2::InSiteMessagesController#index as */*
+  Parameters: {"in_site_message"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mInSiteMessage Load (0.4ms)[0m  SELECT  "in_site_messages".* FROM "in_site_messages" WHERE (sender_id=1 OR receiver_id=1)  ORDER BY "in_site_messages"."created_at" DESC LIMIT 25 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (3, 1)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1, 3, 2)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.2ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/_message.json.jbuilder (0.1ms)
+  Rendered api/v2/in_site_messages/index.json.jbuilder (83.7ms)
+Completed 200 OK in 158ms (Views: 88.4ms | ActiveRecord: 0.9ms)
